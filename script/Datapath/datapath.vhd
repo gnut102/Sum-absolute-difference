@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
-entity sad is
+entity datapath is
 	port(
 		clk: in std_logic;
 		RE_1: in std_logic;
@@ -32,10 +32,19 @@ entity sad is
 		Data_out: out integer;
 		SAD_out: out integer
 		
+		
+		--test
+--		m1_test: out integer;
+--		m2_test: out integer;
+--		m1_addr: out integer;
+--		m2_addr: out integer;
+--		sad_addr: out integer;
+--		tcount_j: out integer
+		
 );
-end sad;
+end datapath;
 
-architecture structural of sad is
+architecture structural of datapath is
 	signal d_out1, d_out2, d_out3, abs_out: integer;
 	signal count_i, count_j : integer;
 	signal sad_maddr: integer;
@@ -119,7 +128,7 @@ begin
 	 img2: img port map(
 		clk => clk,
 		RE => RE_2,
-		WE => WE_1, 
+		WE => WE_2, 
 		D_in => data_in2,
 		Addr => maddr2,
 		D_out => d_out2
@@ -149,7 +158,7 @@ begin
 --count_i
 	 counter_i : counter port map (
 		clk => clk,
-		rst => rst_sad,
+		rst => '0',
 		load => ld_i,
 		enable => en_i,
 		cin => 0,
@@ -159,7 +168,7 @@ begin
 --count_j
 	 counter_j : counter port map (
 		clk => clk,
-		rst => rst_sad,
+		rst => '0',
 		load => ld_j,
 		enable => en_j,
 		cin => 0,
@@ -189,7 +198,7 @@ begin
 -- compare i
 	compare_j : compare port map(
 		in1 => count_j,
-		in2 => m,
+		in2 => n,
 		comp => comp_j  
 	);
 	
@@ -218,5 +227,13 @@ begin
 -- sad value: 
 	sad_out <= sad_value;
 	ad_value <= sad_value + abs_out;
-
+	
+-- test
+--	m1_test <= d_out1;
+--	m2_test <= d_out2;
+--	m1_addr <= maddr1;
+--	m2_addr <= maddr2;
+--	sad_addr <= sad_maddr;
+--	tcount_j <= count_j;
+	
 end structural;

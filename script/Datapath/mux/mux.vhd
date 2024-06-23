@@ -19,9 +19,10 @@ begin
 process(in1, in0, en)
 begin
 	if en = '0' then
-	t_out <= in0;
-	elsif t_out <= in1 then
+		out1 <= in0;
+	else
+		out1 <= in1;
 	end if;
 end process;
-out1 <= t_out;
+
 end behavior;

@@ -18,9 +18,9 @@ begin
 process(in1, in2)
 begin
 	if in1 < in2 then
-	t_comp <= '0';
-	elsif t_comp <='1' then
+		comp <= '0';
+	else
+		comp <='1';
 	end if;
 end process;
-comp <= t_comp;
 end behavior;
