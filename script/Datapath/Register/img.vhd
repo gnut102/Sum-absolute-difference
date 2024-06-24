@@ -16,7 +16,7 @@ entity img is
 end img;
 
 architecture structural of img is
-	type integer_array is array (0 to 15) of integer;
+	type integer_array is array (0 to 256) of integer;
 	signal D: integer_array;
 	
 begin 

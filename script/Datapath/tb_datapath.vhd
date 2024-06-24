@@ -46,10 +46,10 @@ architecture Behavioral of TB_datapath is
 		clk: in std_logic;
 		RE_1: in std_logic;
 		RE_2: in std_logic;
-		RE_3: in std_logic;
+--		RE_3: in std_logic;
 		WE_1: in std_logic;
 		WE_2: in std_logic;
-		WE_3: in std_logic;
+--		WE_3: in std_logic;
 		ld_sad: in std_logic;
 		rst_sad: in std_logic;
 		En_i: in std_logic;
@@ -68,7 +68,7 @@ architecture Behavioral of TB_datapath is
 		
 		comp_i: out std_logic;
 		comp_j: out std_logic;
-		Data_out: out integer;
+--		Data_out: out integer;
 		SAD_out: out integer
 		
 		--test
@@ -87,10 +87,10 @@ architecture Behavioral of TB_datapath is
 		clk => clk,
 		RE_1 => re_1,
 		RE_2 => re_2,
-		RE_3 => re_3,
+--		RE_3 => re_3,
 		WE_1 => we_1,
 		WE_2 => we_2,
-		WE_3 => we_3,
+--		WE_3 => we_3,
 		ld_sad => ld_sad,
 		rst_sad => rst_sad,
 		En_i => en_i,
@@ -109,7 +109,7 @@ architecture Behavioral of TB_datapath is
 		--output
 		comp_i => comp_i,
 		comp_j => comp_j,
-		Data_out => data_out,
+--		Data_out => data_out,
 		SAD_out => sad_out
 		
 		--test

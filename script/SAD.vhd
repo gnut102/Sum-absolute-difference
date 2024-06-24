@@ -17,8 +17,12 @@ entity sad is
 		data_in2: in integer;
 		
 		done: out std_logic;
-		data_out: out integer;
-		sad_out : out integer
+--		data_out: out integer;
+		sad_out : out integer;
+		
+-- test:
+		tcomp_i : out std_logic;
+		tcomp_j : out std_logic
 		
 );
 end sad;
@@ -33,10 +37,10 @@ component datapath is
 		clk: in std_logic;
 		RE_1: in std_logic;
 		RE_2: in std_logic;
-		RE_3: in std_logic;
+--		RE_3: in std_logic;
 		WE_1: in std_logic;
 		WE_2: in std_logic;
-		WE_3: in std_logic;
+--		WE_3: in std_logic;
 		ld_sad: in std_logic;
 		rst_sad: in std_logic;
 		En_i: in std_logic;
@@ -55,7 +59,7 @@ component datapath is
 		
 		comp_i: out std_logic;
 		comp_j: out std_logic;
-		Data_out: out integer;
+--		Data_out: out integer;
 		SAD_out: out integer
 	);
 	end component;
@@ -72,8 +76,8 @@ port (
 		done	: out std_logic;
 		re_1	: out std_logic;
 		re_2	: out std_logic;
-		re_3	: out std_logic;
-		we_3	: out std_logic;
+--		re_3	: out std_logic;
+--		we_3	: out std_logic;
 		ld_sad	: out std_logic;
 		rst_sad	: out std_logic;
 		en_i	: out std_logic;
@@ -88,10 +92,10 @@ sad_datapath : datapath port map (
 		clk => clk,
 		RE_1 => re_1,
 		RE_2 => re_2,
-		RE_3 => re_3,
+--		RE_3 => re_3,
 		WE_1 => we_1,
 		WE_2 => we_2,
-		WE_3 => we_3,
+--		WE_3 => we_3,
 		ld_sad => ld_sad,
 		rst_sad => rst_sad,
 		En_i => en_i,
@@ -110,7 +114,7 @@ sad_datapath : datapath port map (
 		
 		comp_i => comp_i,
 		comp_j => comp_j,
-		Data_out => data_out,
+--		Data_out => data_out,
 		SAD_out => sad_out
 );
 
@@ -124,8 +128,8 @@ sad_control : control port map (
 		done => done,
 		re_1 => re_1,
 		re_2 => re_2,
-		re_3 => re_3,
-		we_3 => we_3,
+--		re_3 => re_3,
+--		we_3 => we_3,
 		ld_sad => ld_sad,
 		rst_sad => rst_sad,
 		en_i => en_i,
@@ -134,7 +138,13 @@ sad_control : control port map (
 		ld_j => ld_j
 );
 
+
+--test
+tcomp_i <= comp_i;
+tcomp_j <= comp_j;
+
 end structural;
+
 
 
 

@@ -39,8 +39,8 @@ architecture Behavioral of TB_control is
 		done	: out std_logic;
 		re_1	: out std_logic;
 		re_2	: out std_logic;
-		re_3	: out std_logic;
-		we_3	: out std_logic;
+--		re_3	: out std_logic;
+--		we_3	: out std_logic;
 		ld_sad	: out std_logic;
 		rst_sad	: out std_logic;
 		en_i	: out std_logic;
@@ -61,8 +61,8 @@ begin
 		done => done,
 		re_1 => re_1,
 		re_2 => re_2,
-		re_3 => re_3,
-		we_3 => we_3,
+--		re_3 => re_3,
+--		we_3 => we_3,
 		ld_sad => ld_sad,
 		rst_sad => rst_sad,
 		en_i => en_i,

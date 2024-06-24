@@ -7,10 +7,10 @@ entity datapath is
 		clk: in std_logic;
 		RE_1: in std_logic;
 		RE_2: in std_logic;
-		RE_3: in std_logic;
+--		RE_3: in std_logic;
 		WE_1: in std_logic;
 		WE_2: in std_logic;
-		WE_3: in std_logic;
+--		WE_3: in std_logic;
 		ld_sad: in std_logic;
 		rst_sad: in std_logic;
 		En_i: in std_logic;
@@ -29,7 +29,7 @@ entity datapath is
 		
 		comp_i: out std_logic;
 		comp_j: out std_logic;
-		Data_out: out integer;
+--		Data_out: out integer;
 		SAD_out: out integer
 		
 		
@@ -136,14 +136,14 @@ begin
 	 
 	 
 --mem3
-	 sad_m: img port map(
-		clk => clk,
-		RE => RE_3,
-		WE => WE_3, 
-		D_in => abs_out,
-		Addr => sad_maddr,
-		D_out => data_out
-	 );
+--	 sad_m: img port map(
+--		clk => clk,
+--		RE => RE_3,
+--		WE => WE_3, 
+--		D_in => abs_out,
+--		Addr => sad_maddr,
+--		D_out => data_out
+--	 );
 
 	 
 --abs
@@ -196,6 +196,7 @@ begin
 	);
 
 -- compare i
+
 	compare_j : compare port map(
 		in1 => count_j,
 		in2 => n,
